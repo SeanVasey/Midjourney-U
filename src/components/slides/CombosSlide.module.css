@@ -1,0 +1,90 @@
+.container {
+  min-height: 100vh;
+  padding: var(--slide-padding-top) var(--slide-padding-x) var(--slide-padding-bottom);
+  max-width: var(--slide-max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.intro {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--border-light);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.signal {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.signalGreen { background: #34D399; }
+.signalYellow { background: #FBBF24; }
+.signalOrange { background: #F97316; }
+
+.cardTitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.formula {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-style);
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--surface-code);
+  margin-bottom: 12px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+.useCase {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-subtle);
+  margin: 0;
+}
+
+.useCaseLabel {
+  color: var(--color-character);
+}

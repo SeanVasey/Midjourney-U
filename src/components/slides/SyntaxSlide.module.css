@@ -1,0 +1,78 @@
+.container {
+  min-height: 100vh;
+  padding: var(--slide-padding-top) var(--slide-padding-x) var(--slide-padding-bottom);
+  max-width: var(--slide-max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid var(--border-light);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cardLabel {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.copyBtn {
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  transition: color 0.2s;
+}
+
+.copyBtn.idle {
+  color: var(--text-muted);
+}
+
+.copyBtn.copied {
+  color: var(--color-style);
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--color-style);
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--surface-code);
+  margin-bottom: 8px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.6;
+}
+
+.note {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  color: var(--text-subtle);
+  margin: 0;
+  line-height: 1.5;
+}

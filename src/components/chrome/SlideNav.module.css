@@ -1,0 +1,42 @@
+.bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 100;
+  background: rgba(10, 10, 20, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 40px;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  padding: 4px 8px;
+}
+
+.button.enabled {
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.button.disabled {
+  color: rgba(255, 255, 255, 0.2);
+  cursor: default;
+}
+
+.counter {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  min-width: 60px;
+  text-align: center;
+}

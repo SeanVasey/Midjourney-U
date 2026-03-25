@@ -1,0 +1,32 @@
+.container {
+  position: fixed;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+}
+
+.dot {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot.active {
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, var(--color-style), var(--color-character));
+  box-shadow: 0 0 8px rgba(78, 205, 196, 0.6);
+}
+
+.dot.inactive {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}

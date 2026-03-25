@@ -1,0 +1,99 @@
+.container {
+  min-height: 100vh;
+  padding: var(--slide-padding-top) var(--slide-padding-x) var(--slide-padding-bottom);
+  max-width: var(--slide-max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.intro {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 32px;
+  transition: opacity 0.6s ease 0.3s;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface-card);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: 3px 0 0 3px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.cardIconWrap {
+  border-radius: 6px;
+  padding: 5px;
+  line-height: 0;
+}
+
+.cardName {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cardParam {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--surface-elevated);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.cardMeta {
+  margin-left: auto;
+  text-align: right;
+}
+
+.cardWeight {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.cardDefault {
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+.cardTagline {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-style: italic;
+  margin: 0 0 8px;
+  opacity: 0.8;
+}
+
+.cardDesc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+  margin: 0;
+}
