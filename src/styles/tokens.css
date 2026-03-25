@@ -1,0 +1,45 @@
+:root {
+  /* Reference type colors */
+  --color-image: #ff6b6b;
+  --color-style: #4ecdc4;
+  --color-character: #a78bfa;
+  --color-omni: #f59e0b;
+
+  /* Brand */
+  --color-brand-u: #e5922e;
+  --color-bg: #0a0a14;
+  --color-text: #ffffff;
+
+  /* Opacity shades */
+  --text-primary: rgba(255, 255, 255, 1);
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-tertiary: rgba(255, 255, 255, 0.55);
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --text-subtle: rgba(255, 255, 255, 0.35);
+  --text-faint: rgba(255, 255, 255, 0.25);
+  --text-ghost: rgba(255, 255, 255, 0.15);
+  --text-trace: rgba(255, 255, 255, 0.12);
+
+  /* Surfaces */
+  --surface-card: rgba(255, 255, 255, 0.03);
+  --surface-elevated: rgba(255, 255, 255, 0.05);
+  --surface-code: rgba(0, 0, 0, 0.4);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-light: rgba(255, 255, 255, 0.08);
+
+  /* Fonts */
+  --font-display: "Abolition Test", "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-heading: "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-accent: "Graduate", Georgia, serif;
+  --font-body: "Reddit Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Spacing */
+  --slide-max-width: 640px;
+  --slide-padding-top: 54px;
+  --slide-padding-bottom: 100px;
+  --slide-padding-x: 16px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
