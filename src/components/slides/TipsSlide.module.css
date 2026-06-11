@@ -1,5 +1,6 @@
 .container {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: var(--slide-padding-top) var(--slide-padding-x) var(--slide-padding-bottom);
   max-width: var(--slide-max-width);
   margin: 0 auto;

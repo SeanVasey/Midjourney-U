@@ -1,6 +1,6 @@
 .container {
   position: fixed;
-  right: 12px;
+  right: calc(12px + env(safe-area-inset-right, 0px));
   top: 50%;
   transform: translateY(-50%);
   display: flex;

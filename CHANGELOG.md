@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- iOS safe-area support: `viewport-fit=cover` plus `env(safe-area-inset-*)` offsets on the fixed chrome (header, progress bar, nav dots, slide nav) and app container, so content clears the notch and home indicator on iPhone/iPad
+- Dynamic viewport units (`100dvh` with `100vh` fallback) on the app shell and all slides to prevent overflow under mobile Safari's collapsing toolbars
+- GitHub Pages deployment workflow (`deploy-pages.yml`) that builds the Vite app with the correct `/Midjourney-U/` base path and ships a `404.html` SPA fallback
+
+### Fixed
+
+- Replaced the auto-generated Jekyll Pages workflow, which published raw source files instead of the built app
+- Web app manifest now uses relative icon paths and `start_url`, so the PWA installs correctly from both Vercel (domain root) and GitHub Pages (repo subpath)
+
 ## [1.0.0] - 2026-03-25
 
 ### Added
