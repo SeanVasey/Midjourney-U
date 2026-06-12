@@ -5,7 +5,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: calc(40px + env(safe-area-inset-top, 0px))
+    max(20px, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px))
+    calc(40px + env(safe-area-inset-bottom, 0px));
   position: relative;
   overflow: hidden;
 }
