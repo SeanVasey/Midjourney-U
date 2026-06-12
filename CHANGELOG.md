@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Fixed
 
+- Slide backgrounds (hero gradients) now extend under the iOS status bar and home indicator: safe-area insets moved from app-shell padding into the slide padding tokens, removing the faint tint seam at the notch edge on the hero slide
 - Replaced the auto-generated Jekyll Pages workflow, which published raw source files instead of the built app
 - Web app manifest now uses relative icon paths and `start_url`, so the PWA installs correctly from both Vercel (domain root) and GitHub Pages (repo subpath)
 

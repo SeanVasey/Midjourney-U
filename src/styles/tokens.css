@@ -34,11 +34,13 @@
   --font-body: "Reddit Sans", "Helvetica Neue", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* Spacing */
+  /* Spacing — slide padding absorbs the iOS safe-area insets so slide
+     backgrounds can run full-bleed while content clears the notch,
+     home indicator, and rounded corners */
   --slide-max-width: 640px;
-  --slide-padding-top: 54px;
-  --slide-padding-bottom: 100px;
-  --slide-padding-x: 16px;
+  --slide-padding-top: calc(54px + env(safe-area-inset-top, 0px));
+  --slide-padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  --slide-padding-x: max(16px, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
 
   /* Transitions */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
