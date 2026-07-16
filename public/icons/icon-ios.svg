@@ -1,25 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="Midjourney-U app icon">
 <defs>
 <linearGradient id="tile_body" x1="0" y1="22" x2="0" y2="1002" gradientUnits="userSpaceOnUse">
-<stop offset="0" stop-color="#1C2027"/><stop offset=".55" stop-color="#0C0E12"/><stop offset="1" stop-color="#060708"/>
-</linearGradient>
-<linearGradient id="tile_sheen" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#ffffff" stop-opacity=".11"/><stop offset=".16" stop-color="#ffffff" stop-opacity="0"/>
-</linearGradient>
-<filter id="tile_glow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
-<feGaussianBlur stdDeviation="14"/>
-</filter>
+<stop offset="0" stop-color="#1C2027"/><stop offset=".55" stop-color="#0C0E12"/><stop offset="1" stop-color="#060708"/></linearGradient>
+<linearGradient id="tile_sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".11"/><stop offset=".16" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+<filter id="tile_glow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="13"/></filter>
 <clipPath id="tile_bodyclip"><rect x="22" y="22" width="980" height="980" rx="212" ry="212" /></clipPath>
 </defs>
-<!-- 1. outer glow (unclipped, behind) -->
-<g filter="url(#tile_glow)" opacity="0.85"><rect x="18" y="18" width="988" height="988" rx="216" ry="216" fill="none" stroke="#E5922E" stroke-width="16"/></g>
+<g filter="url(#tile_glow)" opacity="0.95"><rect x="18" y="18" width="988" height="988" rx="216" ry="216" fill="none" stroke="#E5922E" stroke-width="20"/></g>
 <g clip-path="url(#tile_bodyclip)">
-<!-- 2. body -->
 <rect x="22" y="22" width="980" height="980" rx="212" ry="212" fill="url(#tile_body)"/>
-<!-- 3. upper sheen -->
 <rect x="22" y="22" width="980" height="980" rx="212" ry="212" fill="url(#tile_sheen)"/>
-<!-- 4. mark (unaltered) -->
-<svg x="120.0" y="120.0" width="784" height="784" viewBox="379.60 333.00 1906.40 1996.30" preserveAspectRatio="xMidYMid meet" overflow="visible">
+<svg x="120.0" y="120.0" width="784" height="784" viewBox="379.6 333.0 1906.4 1996.3" preserveAspectRatio="xMidYMid meet" overflow="visible">
 <!--
   Midjourney-U Sailboat Icon — Final Clean Vector
   Potrace from source raster | Cleaned & optimized
@@ -261,6 +252,5 @@ l35 -38 32 31 c31 30 31 30 8 105 -66 207 -66 389 0 443 47 39 9 93 -218 313
 </g>
 </svg>
 </g>
-<!-- 6. crisp line (unclipped, on top) -->
-<rect x="24" y="24" width="976" height="976" rx="210" ry="210" fill="none" stroke="#EDB36D" stroke-width="4" opacity="0.85"/>
+<rect x="25" y="25" width="974" height="974" rx="209" ry="209" fill="none" stroke="#F4A93C" stroke-width="6" opacity="1.0"/>
 </svg>

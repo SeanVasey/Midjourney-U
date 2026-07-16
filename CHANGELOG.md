@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Refreshed the iOS-style app tile (`midjourney-icon-ios.svg`) with a stronger amber outer glow and a brighter, thicker rim, and regenerated the entire raster suite (`favicon-16` → `icon-1024`, every `apple-touch-icon` size, `favicon.ico`, and the `public/icons/icon-ios.svg` copy) so the favicon, PWA, and iOS Home Screen icon all reflect the updated design. All rasters preserve the tile's transparent rounded corners for correct iOS/Android masking
+- Inset the tile's crisp rim rect to keep its (now 6px) stroke's outer edge flush with the clipped body boundary, matching the design's long-standing intent and preventing a ~1px amber bleed onto the transparent corners
 - New designed iOS-style app tile (`midjourney-icon-ios.svg`) is now the favicon, PWA, and iOS Home Screen icon: a dark gradient rounded-rect body with amber glow, sheen, and the sailboat mark. Regenerated the full raster suite (`icon-16` → `icon-1024`, all `apple-touch-icon` sizes, `favicon.ico`) from it. The optimized transparent `icon.svg` mark is preserved in `public/icons/` for uses where a transparent background is ideal
 - Icon generator (`scripts/generate-icons.mjs`) now sources rasters from the iOS tile at 2× render density for crisper downscales, and copies both the tile (`icon-ios.svg`) and the transparent mark (`icon.svg`) into `public/icons/`
 
