@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- New designed iOS-style app tile (`midjourney-icon-ios.svg`) is now the favicon, PWA, and iOS Home Screen icon: a dark gradient rounded-rect body with amber glow, sheen, and the sailboat mark. Regenerated the full raster suite (`icon-16` → `icon-1024`, all `apple-touch-icon` sizes, `favicon.ico`) from it. The optimized transparent `icon.svg` mark is preserved in `public/icons/` for uses where a transparent background is ideal
+- Icon generator (`scripts/generate-icons.mjs`) now sources rasters from the iOS tile at 2× render density for crisper downscales, and copies both the tile (`icon-ios.svg`) and the transparent mark (`icon.svg`) into `public/icons/`
+
 ### Added
 
 - iOS safe-area support: `viewport-fit=cover` plus `env(safe-area-inset-*)` offsets on the fixed chrome (header, progress bar, nav dots, slide nav) and app container, so content clears the notch and home indicator on iPhone/iPad

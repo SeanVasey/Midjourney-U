@@ -1,7 +1,17 @@
 #!/usr/bin/env node
 /**
- * Generate all PWA icon assets from source SVG.
- * Preserves transparency for iOS adaptive light/dark tinting.
+ * Generate all favicon / PWA / home-screen icon assets from source SVGs.
+ *
+ * Two source SVGs are used:
+ *   - midjourney-icon-ios.svg  → the designed iOS-style app tile (dark gradient
+ *     body, amber glow, sheen, sailboat mark). This is THE app icon shown on the
+ *     iOS Home Screen, the browser tab (favicon) and when the PWA is installed.
+ *     Its rounded corners are transparent, so iOS/Android masking renders cleanly.
+ *   - icon.svg  → the optimized transparent sailboat mark, preserved for other
+ *     purposes where a fully transparent background is ideal (in-app usage).
+ *
+ * All rasterized PNGs are generated from the iOS tile. Both SVGs are copied into
+ * public/icons/ so they can be referenced at runtime.
  */
 import sharp from "sharp";
 import { readFileSync, writeFileSync } from "fs";
@@ -10,7 +20,10 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-const SVG_PATH = resolve(ROOT, "icon.svg");
+// Opaque designed tile — source of truth for all rasterized app icons.
+const SVG_PATH = resolve(ROOT, "midjourney-icon-ios.svg");
+// Optimized transparent mark — kept for transparent-background use cases.
+const SVG_MARK_PATH = resolve(ROOT, "icon.svg");
 const ICONS_DIR = resolve(ROOT, "public", "icons");
 
 const svgBuffer = readFileSync(SVG_PATH);
@@ -32,10 +45,13 @@ const pngSizes = [
   { name: "favicon-16.png", size: 16 },
 ];
 
+// Rasterize the 1024px source at 2× (density 192 → ~2048px) so downscaled
+// icons stay crisp and the glow filter scales proportionally.
+const RENDER_DENSITY = 192;
+
 async function generatePNG(name, size) {
   const output = resolve(ICONS_DIR, name);
-  // Use density 72 to keep rasterized SVG within pixel limits, then resize
-  await sharp(svgBuffer, { density: 72 })
+  await sharp(svgBuffer, { density: RENDER_DENSITY })
     .resize(size, size, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png()
     .toFile(output);
@@ -47,7 +63,7 @@ async function generateICO() {
   const sizes = [16, 32, 48];
   const buffers = await Promise.all(
     sizes.map((s) =>
-      sharp(svgBuffer, { density: 72 })
+      sharp(svgBuffer, { density: RENDER_DENSITY })
         .resize(s, s, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
         .png()
         .toBuffer()
@@ -93,12 +109,16 @@ function buildICO(pngBuffers, sizes) {
 }
 
 async function main() {
-  console.log("Generating icons from icon.svg...\n");
+  console.log("Generating icons from midjourney-icon-ios.svg...\n");
 
-  // Copy SVG to public/icons as well
-  const svgContent = readFileSync(SVG_PATH, "utf8");
-  writeFileSync(resolve(ICONS_DIR, "icon.svg"), svgContent);
-  console.log("  ✓ icon.svg (copied to public/icons/)");
+  // Copy the iOS tile SVG to public/icons (scalable app icon / SVG favicon).
+  // Reuse the buffer already read at module load rather than re-reading.
+  writeFileSync(resolve(ICONS_DIR, "icon-ios.svg"), svgBuffer);
+  console.log("  ✓ icon-ios.svg (copied to public/icons/)");
+
+  // Keep the optimized transparent mark available for transparent use cases.
+  writeFileSync(resolve(ICONS_DIR, "icon.svg"), readFileSync(SVG_MARK_PATH));
+  console.log("  ✓ icon.svg (transparent mark copied to public/icons/)");
 
   // Generate all PNGs
   await Promise.all(pngSizes.map(({ name, size }) => generatePNG(name, size)));
