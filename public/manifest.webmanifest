@@ -50,7 +50,7 @@
       "purpose": "any"
     },
     {
-      "src": "icons/icon.svg",
+      "src": "icons/icon-ios.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
