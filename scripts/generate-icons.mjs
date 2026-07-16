@@ -112,11 +112,12 @@ async function main() {
   console.log("Generating icons from midjourney-icon-ios.svg...\n");
 
   // Copy the iOS tile SVG to public/icons (scalable app icon / SVG favicon).
-  writeFileSync(resolve(ICONS_DIR, "icon-ios.svg"), readFileSync(SVG_PATH, "utf8"));
+  // Reuse the buffer already read at module load rather than re-reading.
+  writeFileSync(resolve(ICONS_DIR, "icon-ios.svg"), svgBuffer);
   console.log("  ✓ icon-ios.svg (copied to public/icons/)");
 
   // Keep the optimized transparent mark available for transparent use cases.
-  writeFileSync(resolve(ICONS_DIR, "icon.svg"), readFileSync(SVG_MARK_PATH, "utf8"));
+  writeFileSync(resolve(ICONS_DIR, "icon.svg"), readFileSync(SVG_MARK_PATH));
   console.log("  ✓ icon.svg (transparent mark copied to public/icons/)");
 
   // Generate all PNGs
